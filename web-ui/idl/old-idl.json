@@ -1,0 +1,67 @@
+{
+  "accounts": [
+    {
+      "name": "Game",
+      "type": {
+        "fields": [
+          {
+            "name": "player",
+            "type": "publicKey"
+          },
+          {
+            "name": "clicks",
+            "type": "u32"
+          }
+        ],
+        "kind": "struct"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidPlayer"
+    }
+  ],
+  "instructions": [
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "game"
+        },
+        {
+          "isMut": true,
+          "isSigner": true,
+          "name": "player"
+        },
+        {
+          "isMut": false,
+          "isSigner": false,
+          "name": "systemProgram"
+        }
+      ],
+      "args": [],
+      "name": "initialize"
+    },
+    {
+      "accounts": [
+        {
+          "isMut": true,
+          "isSigner": false,
+          "name": "game"
+        },
+        {
+          "isMut": false,
+          "isSigner": true,
+          "name": "player"
+        }
+      ],
+      "args": [],
+      "name": "click"
+    }
+  ],
+  "name": "clicker",
+  "version": "0.1.0"
+}
