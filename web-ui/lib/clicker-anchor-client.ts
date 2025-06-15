@@ -133,9 +133,9 @@ async function getProgram({
     throw new Error("Solana program missing IDL");
   }
 
-  console.log(`✅ IDL fetched successfully! Program name: ${idl.name}`); 
+  console.log(`✅ IDL fetched successfully! Program name: ${idl.metadata.name}`); 
   console.log("🧾 Instructions in IDL:", idl.instructions.map((i) => i.name));
-  console.log("📄 Full IDL content:", JSON.stringify(idl, null, 2));
+
   return new Program(idl, programAddress, provider);
 }
 
